@@ -1,33 +1,37 @@
-const screens = {
-  ready: document.getElementById("ready"),
-  no: document.getElementById("no"),
-  gift: document.getElementById("gift"),
-  after: document.getElementById("afterGift"),
-  final: document.getElementById("final")
-};
+document.addEventListener("DOMContentLoaded", () => {
 
-function show(target) {
-  Object.values(screens).forEach(s => s.classList.remove("active"));
-  target.classList.add("active");
-}
+  const screens = {
+    ready: document.getElementById("ready"),
+    no: document.getElementById("no"),
+    gift: document.getElementById("gift"),
+    after: document.getElementById("afterGift"),
+    final: document.getElementById("final")
+  };
 
-document.getElementById("yesBtn").onclick = () => show(screens.gift);
-document.getElementById("noBtn").onclick = () => show(screens.no);
+  function show(target) {
+    Object.values(screens).forEach(s => s.classList.remove("active"));
+    target.classList.add("active");
+  }
 
-const giftGif = document.getElementById("giftGif");
-giftGif.onclick = () => {
-  const src = giftGif.src;
-  giftGif.src = "";
-  giftGif.src = src;
+  document.getElementById("yesBtn").onclick = () => show(screens.gift);
+  document.getElementById("noBtn").onclick = () => show(screens.no);
 
-  setTimeout(() => show(screens.after), 1500);
-};
+  const giftGif = document.getElementById("giftGif");
+  giftGif.onclick = () => {
+    const src = giftGif.src;
+    giftGif.src = "";
+    giftGif.src = src;
 
-const exitBtn = document.getElementById("exit");
-exitBtn.onmouseover = () => {
-  exitBtn.style.position = "absolute";
-  exitBtn.style.left = Math.random() * 70 + "vw";
-  exitBtn.style.top = Math.random() * 70 + "vh";
-};
+    setTimeout(() => show(screens.after), 1500);
+  };
 
-document.getElementById("proceed").onclick = () => show(screens.final);
+  const exitBtn = document.getElementById("exit");
+  exitBtn.onmouseover = () => {
+    exitBtn.style.position = "absolute";
+    exitBtn.style.left = Math.random() * 70 + "vw";
+    exitBtn.style.top = Math.random() * 70 + "vh";
+  };
+
+  document.getElementById("proceed").onclick = () => show(screens.final);
+
+});
