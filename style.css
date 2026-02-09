@@ -1,47 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valentine</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #e75480;
+  color: white;
+  text-align: center;
+}
 
-<!-- READY -->
-<div id="ready" class="screen">
-  <h1>Are you ready?</h1>
-  <button onclick="goGift()">Yes</button>
-  <button onclick="goNo()">No</button>
-</div>
+.screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-<!-- NO -->
-<div id="no" class="screen hidden">
-  <div class="no-bg">NO MODE ACTIVATED</div>
-</div>
+.hidden {
+  display: none;
+}
 
-<!-- GIFT -->
-<div id="gift" class="screen hidden">
-  <img id="giftGif" src="gift.gif" alt="Gift" />
-  <p>Click on the gift to open it</p>
-</div>
+button {
+  padding: 14px 24px;
+  margin: 10px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
 
-<!-- AFTER GIFT -->
-<div id="afterGift" class="screen hidden">
-  <p>Your gift isn’t here, silly, but you’ll have it soon 💕</p>
-  <img src="cat_kiss.gif" alt="Cat kiss" />
-  <div>
-    <button onclick="goFinal()">Proceed further</button>
-    <button id="exitBtn">Exit</button>
-  </div>
-</div>
+.no-bg {
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffb6c1,
+    #ffb6c1 20px,
+    #e75480 20px,
+    #e75480 40px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
 
-<!-- FINAL -->
-<div id="final" class="screen hidden">
-  <h1>I love you, so here’s another gift 💖</h1>
-  <div class="collage">[ Your collage here ]</div>
-</div>
+img {
+  max-width: 220px;
+}
 
-<script src="script.js"></script>
-</body>
-</html>
+.collage {
+  width: 260px;
+  height: 260px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
