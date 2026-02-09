@@ -9,7 +9,7 @@
 <body>
 
 <!-- READY -->
-<section id="ready" class="screen active">
+<section id="ready" class="screen show">
   <h1>Are you ready?</h1>
   <div class="buttons">
     <button id="yesBtn">Yes</button>
@@ -18,18 +18,19 @@
 </section>
 
 <!-- NO -->
-<section id="no" class="screen hidden">
+<section id="no" class="screen">
   <div class="no-bg"></div>
+  <button id="tryAgainBtn" class="try-again">Try Again</button>
 </section>
 
 <!-- GIFT -->
-<section id="gift" class="screen hidden gift-screen">
+<section id="gift" class="screen gift-screen">
   <img id="giftGif" src="gift.gif" alt="Gift" />
-  <p class="hint">Click on the gift to open it</p>
+  <p>Click on the gift to open it</p>
 </section>
 
 <!-- AFTER GIFT -->
-<section id="afterGift" class="screen hidden">
+<section id="afterGift" class="screen">
   <p class="message">
     Your gift isn’t here, silly,<br>
     but you’ll have it very soon 💕
@@ -42,7 +43,7 @@
 </section>
 
 <!-- FINAL -->
-<section id="final" class="screen hidden">
+<section id="final" class="screen">
   <h1>I love you, so here’s another gift 💖</h1>
   <a href="SPOTIFY_LINK_HERE" target="_blank">
     <img src="collage.jpg" class="collage" alt="Collage" />
