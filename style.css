@@ -1,83 +1,47 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-  background: #e75480;
-  color: white;
-}
+<!-- READY -->
+<div id="ready" class="screen">
+  <h1>Are you ready?</h1>
+  <button onclick="goGift()">Yes</button>
+  <button onclick="goNo()">No</button>
+</div>
 
-.screen {
-  min-height: 100vh;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 24px;
-}
+<!-- NO -->
+<div id="no" class="screen hidden">
+  <div class="no-bg">NO MODE ACTIVATED</div>
+</div>
 
-.active { display: flex; }
-.hidden { display: none; }
+<!-- GIFT -->
+<div id="gift" class="screen hidden">
+  <img id="giftGif" src="gift.gif" alt="Gift" />
+  <p>Click on the gift to open it</p>
+</div>
 
-h1 {
-  font-size: clamp(2.2rem, 7vw, 3.5rem);
-  margin-bottom: 20px;
-}
+<!-- AFTER GIFT -->
+<div id="afterGift" class="screen hidden">
+  <p>Your gift isn’t here, silly, but you’ll have it soon 💕</p>
+  <img src="cat_kiss.gif" alt="Cat kiss" />
+  <div>
+    <button onclick="goFinal()">Proceed further</button>
+    <button id="exitBtn">Exit</button>
+  </div>
+</div>
 
-button {
-  padding: 14px 28px;
-  font-size: 1.1rem;
-  border-radius: 12px;
-  border: none;
-  margin: 10px;
-  cursor: pointer;
-}
+<!-- FINAL -->
+<div id="final" class="screen hidden">
+  <h1>I love you, so here’s another gift 💖</h1>
+  <div class="collage">[ Your collage here ]</div>
+</div>
 
-#yesBtn { background: white; color: #e75480; }
-#noBtn, #exit {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-/* NO screen */
-.no-bg {
-  width: 100vw;
-  height: 100vh;
-  background: url("no_bg.jpg") repeat;
-  background-size: 180px;
-}
-
-/* Gift */
-#giftGif {
-  width: 220px;
-  max-width: 80%;
-}
-
-/* After gift */
-.message {
-  font-size: 1.3rem;
-  margin-bottom: 16px;
-}
-
-.cat {
-  width: 200px;
-  margin-bottom: 20px;
-}
-
-.actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-/* Final */
-.collage {
-  width: 260px;
-  border-radius: 16px;
-  margin-top: 20px;
-}
+<script src="script.js"></script>
+</body>
+</html>
