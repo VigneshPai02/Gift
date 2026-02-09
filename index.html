@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valentine</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine 💖</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <!-- READY -->
-<div id="ready" class="screen">
+<section id="ready" class="screen active">
   <h1>Are you ready?</h1>
-  <button onclick="goGift()">Yes</button>
-  <button onclick="goNo()">No</button>
-</div>
+  <div class="buttons">
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+</section>
 
 <!-- NO -->
-<div id="no" class="screen hidden">
-  <div class="no-bg">NO MODE ACTIVATED</div>
-</div>
+<section id="no" class="screen hidden">
+  <div class="no-bg"></div>
+</section>
 
 <!-- GIFT -->
-<div id="gift" class="screen hidden">
+<section id="gift" class="screen hidden gift-screen">
   <img id="giftGif" src="gift.gif" alt="Gift" />
-  <p>Click on the gift to open it</p>
-</div>
+  <p class="hint">Click on the gift to open it</p>
+</section>
 
 <!-- AFTER GIFT -->
-<div id="afterGift" class="screen hidden">
-  <p>Your gift isn’t here, silly, but you’ll have it soon 💕</p>
-  <img src="cat_kiss.gif" alt="Cat kiss" />
-  <div>
-    <button onclick="goFinal()">Proceed further</button>
+<section id="afterGift" class="screen hidden">
+  <p class="message">
+    Your gift isn’t here, silly,<br>
+    but you’ll have it very soon 💕
+  </p>
+  <img src="cat_kiss.gif" class="cat" alt="Cat kiss" />
+  <div class="buttons">
+    <button id="proceedBtn">Proceed further</button>
     <button id="exitBtn">Exit</button>
   </div>
-</div>
+</section>
 
 <!-- FINAL -->
-<div id="final" class="screen hidden">
+<section id="final" class="screen hidden">
   <h1>I love you, so here’s another gift 💖</h1>
-  <div class="collage">[ Your collage here ]</div>
-</div>
+  <a href="SPOTIFY_LINK_HERE" target="_blank">
+    <img src="collage.jpg" class="collage" alt="Collage" />
+  </a>
+</section>
 
 <script src="script.js"></script>
 </body>
