@@ -1,37 +1,47 @@
-document.addEventListener("DOMContentLoaded", () => {
+console.log("JS LOADED");
 
-  const screens = {
-    ready: document.getElementById("ready"),
-    no: document.getElementById("no"),
-    gift: document.getElementById("gift"),
-    after: document.getElementById("afterGift"),
-    final: document.getElementById("final")
-  };
+function hideAll() {
+  document.querySelectorAll(".screen").forEach(s => {
+    s.classList.add("hidden");
+  });
+}
 
-  function show(target) {
-    Object.values(screens).forEach(s => s.classList.remove("active"));
-    target.classList.add("active");
-  }
+function goGift() {
+  console.log("YES clicked");
+  hideAll();
+  document.getElementById("gift").classList.remove("hidden");
+}
 
-  document.getElementById("yesBtn").onclick = () => show(screens.gift);
-  document.getElementById("noBtn").onclick = () => show(screens.no);
+function goNo() {
+  console.log("NO clicked");
+  hideAll();
+  document.getElementById("no").classList.remove("hidden");
+}
 
-  const giftGif = document.getElementById("giftGif");
-  giftGif.onclick = () => {
-    const src = giftGif.src;
-    giftGif.src = "";
-    giftGif.src = src;
+function goFinal() {
+  console.log("Proceed clicked");
+  hideAll();
+  document.getElementById("final").classList.remove("hidden");
+}
 
-    setTimeout(() => show(screens.after), 1500);
-  };
+const giftGif = document.getElementById("giftGif");
+giftGif.addEventListener("click", () => {
+  console.log("Gift clicked");
 
-  const exitBtn = document.getElementById("exit");
-  exitBtn.onmouseover = () => {
-    exitBtn.style.position = "absolute";
-    exitBtn.style.left = Math.random() * 70 + "vw";
-    exitBtn.style.top = Math.random() * 70 + "vh";
-  };
+  // restart gif safely
+  const src = giftGif.src;
+  giftGif.src = "";
+  giftGif.src = src;
 
-  document.getElementById("proceed").onclick = () => show(screens.final);
+  setTimeout(() => {
+    hideAll();
+    document.getElementById("afterGift").classList.remove("hidden");
+  }, 1200);
+});
 
+const exitBtn = document.getElementById("exitBtn");
+exitBtn.addEventListener("mouseover", () => {
+  exitBtn.style.position = "absolute";
+  exitBtn.style.left = Math.random() * 70 + "vw";
+  exitBtn.style.top = Math.random() * 70 + "vh";
 });
