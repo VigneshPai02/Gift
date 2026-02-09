@@ -1,31 +1,26 @@
-function hideAll() {
+function showScreen(id) {
   document.querySelectorAll(".screen").forEach(s =>
-    s.classList.remove("active")
+    s.classList.remove("show")
   );
+  document.getElementById(id).classList.add("show");
 }
 
-function show(id) {
-  hideAll();
-  document.getElementById(id).classList.add("active");
-}
+/* first screen */
+document.getElementById("yesBtn").onclick = () => showScreen("gift");
+document.getElementById("noBtn").onclick = () => showScreen("no");
+document.getElementById("tryAgainBtn").onclick = () => showScreen("ready");
 
-/* Ready */
-document.getElementById("yesBtn").onclick = () => show("gift");
-document.getElementById("noBtn").onclick = () => show("no");
-
-/* Gift click */
+/* gift */
 const giftGif = document.getElementById("giftGif");
 giftGif.onclick = () => {
   const src = giftGif.src;
   giftGif.src = "";
   giftGif.src = src;
 
-  setTimeout(() => {
-    show("afterGift");
-  }, 1400);
+  setTimeout(() => showScreen("afterGift"), 1400);
 };
 
-/* Exit button dodges */
+/* exit chaos */
 const exitBtn = document.getElementById("exitBtn");
 exitBtn.onmouseover = () => {
   exitBtn.style.position = "absolute";
@@ -33,5 +28,6 @@ exitBtn.onmouseover = () => {
   exitBtn.style.top = Math.random() * 70 + "vh";
 };
 
-/* Proceed */
-document.getElementById("proceedBtn").onclick = () => show("final");
+/* proceed */
+document.getElementById("proceedBtn").onclick = () =>
+  showScreen("final");
