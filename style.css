@@ -1,16 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: system-ui, sans-serif;
 }
 
 body {
-  background: #e75480;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(160deg, #f06a95, #d63384);
   color: white;
+  overflow-x: hidden;
 }
 
-/* screen control */
+/* Screens */
 .screen {
   min-height: 100vh;
   display: none;
@@ -18,55 +21,72 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 24px;
+  padding: 32px 24px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-.show {
+.screen.active {
   display: flex;
+  opacity: 1;
 }
 
-/* text */
-h1 {
-  font-size: clamp(2.4rem, 8vw, 3.6rem);
+/* Typography */
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 8vw, 3.8rem);
   margin-bottom: 24px;
+  line-height: 1.2;
 }
 
-p {
+.subtitle {
   font-size: clamp(1.1rem, 4.5vw, 1.35rem);
+  opacity: 0.9;
+}
+
+.message {
+  font-size: clamp(1.2rem, 4.8vw, 1.5rem);
+  margin-bottom: 24px;
   line-height: 1.6;
 }
 
-/* buttons */
+/* Buttons */
 .buttons {
   display: flex;
-  gap: 16px;
+  gap: 18px;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 16px;
 }
 
 button {
   padding: 14px 28px;
   font-size: 1.1rem;
   border-radius: 999px;
-  border: none;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-#yesBtn {
+.primary {
   background: white;
-  color: #e75480;
+  color: #d63384;
+  border: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
-#noBtn,
-#exitBtn,
-.try-again {
+.secondary {
   background: transparent;
   color: white;
   border: 2px solid white;
 }
 
-/* NO screen */
+button:active {
+  transform: scale(0.96);
+}
+
+/* No screen */
 #no {
+  position: relative;
   padding: 0;
 }
 
@@ -77,13 +97,13 @@ button {
   background-size: 160px;
 }
 
-.try-again {
+.overlay-btn {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   margin-top: 24px;
 }
 
-/* gift screen */
+/* Gift screen */
 .gift-screen {
   background: white;
   color: #444;
@@ -95,20 +115,22 @@ button {
   margin-bottom: 16px;
 }
 
-/* after gift */
-.message {
-  margin-bottom: 20px;
-}
-
+/* After gift */
 .cat {
   width: 220px;
   margin-bottom: 24px;
 }
 
-/* final */
-.collage {
-  width: 280px;
+/* Final */
+.riddhi {
+  width: 260px;
   max-width: 85%;
-  border-radius: 16px;
-  margin-top: 24px;
+  border-radius: 18px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.riddhi:active {
+  transform: scale(0.97);
 }
