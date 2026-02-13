@@ -37,5 +37,5 @@ document.getElementById("proceedBtn").onclick = () =>
 
 /* Final GIF redirect */
 document.getElementById("riddhiGif").onclick = () => {
-  window.open("https://music.amazon.in/user-playlists/21ad50b5-2cb4-42ea-9999-b7fb0b7064b2", "_blank");
+  window.open("https://open.spotify.com/playlist/1TTqypu4nMytVBdonDJodn?si=17AA3DnDTti3TxU75RDuEA", "_blank");
 };
