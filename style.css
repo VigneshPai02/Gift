@@ -13,7 +13,8 @@ body {
   overflow-x: hidden;
 }
 
-/* Screens */
+/* ================= SCREENS ================= */
+
 .screen {
   min-height: 100vh;
   display: none;
@@ -21,7 +22,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 32px 24px;
+  padding: 36px 24px;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -31,12 +32,13 @@ body {
   opacity: 1;
 }
 
-/* Typography */
+/* ================= TYPOGRAPHY ================= */
+
 .title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.6rem, 8vw, 3.8rem);
-  margin-bottom: 24px;
   line-height: 1.2;
+  margin-bottom: 24px;
 }
 
 .subtitle {
@@ -44,13 +46,43 @@ body {
   opacity: 0.9;
 }
 
+/* Romantic formatted message */
 .message {
-  font-size: clamp(1.2rem, 4.8vw, 1.5rem);
-  margin-bottom: 24px;
-  line-height: 1.6;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 5vw, 1.8rem);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 420px;
+  animation: fadeUp 0.8s ease forwards;
 }
 
-/* Buttons */
+.message span {
+  display: block;
+}
+
+.line1 {
+  opacity: 0.85;
+}
+
+.line2 {
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* Fade animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= BUTTONS ================= */
+
 .buttons {
   display: flex;
   gap: 18px;
@@ -84,7 +116,8 @@ button:active {
   transform: scale(0.96);
 }
 
-/* No screen */
+/* ================= NO SCREEN ================= */
+
 #no {
   position: relative;
   padding: 0;
@@ -103,7 +136,8 @@ button:active {
   margin-top: 24px;
 }
 
-/* Gift screen */
+/* ================= GIFT SCREEN ================= */
+
 .gift-screen {
   background: white;
   color: #444;
@@ -115,13 +149,15 @@ button:active {
   margin-bottom: 16px;
 }
 
-/* After gift */
+/* ================= AFTER GIFT ================= */
+
 .cat {
   width: 220px;
   margin-bottom: 24px;
 }
 
-/* Final */
+/* ================= FINAL SCREEN ================= */
+
 .riddhi {
   width: 260px;
   max-width: 85%;
